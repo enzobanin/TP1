@@ -1,0 +1,21 @@
+.banner{
+    background-color: gray;
+    color: white;
+    padding-bottom: 10px;
+    text-align: center;
+    margin: 0px;
+}
+
+.banner img{
+    height: 130px;
+    float: left; 
+    position: absolute;
+    left: 0;
+}
+.brasilcopa{
+   padding-left: 10%;
+}
+
+.gk{
+    padding-left: 50%;
+}
