@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-header', // para chamar em outro componente <app-header>
@@ -7,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrl: './header.css'
 })
 export class Header {
+  tituloLoja = input.required<string>(); //<app-header [tituloLoja] = "'Titulo'"></app-header>
 
+  textoSobre = output<string>();
+
+
+  enviarSobre(){ //:void
+    this.textoSobre.emit('Técnicas de Programação 1. Desenvolvido por Enzo.')
+  }
+
+  // exibirSobre(nome:string): void {
+  //   alert('Boa noite ' + nome);
+  // }
 }
