@@ -29,7 +29,8 @@ export class ListaProdutos {
       id: 3,
       nome: 'Produto 3',
       descricao: 'Desc. Prod 3',
-      preco: 601.99
+      preco: 601.99,
+      imageURL: 'images/camisa2selecaoAzul.png'
     }
   ]
 
