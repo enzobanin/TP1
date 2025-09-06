@@ -12,9 +12,9 @@ export class ListaProdutos {
   produtos: Produto[] = [
     {
       id: 1,
-      nome: 'Produto 1',
-      descricao: 'Desc. Prod 1',
-      preco: 179.90,
+      nome: 'Camisa Brasil 2022',
+      descricao: 'Camisa I Brasil 2022',
+      preco: 199.99,
       imageURL: 'images/brasil2022.png',
       promo:true,
       estado: 'usado'
@@ -22,16 +22,17 @@ export class ListaProdutos {
     {
       id: 2,
       nome: 'Produto 2',
-      descricao: 'Desc. Prod 2',
-      preco: 101,
+      descricao: 'Camisa de Goleiro 2024',
+      preco: 299.99,
       imageURL: 'images/brasil2024gk.png',
-      estado: 'novo'
-    },
+      estado: 'novo',
+      promo:true
+    },  
     {
       id: 3,
-      nome: 'Produto 3',
-      descricao: 'Desc. Prod 3',
-      preco: 601.99,
+      nome: 'Camisa Brasil 2024',
+      descricao: 'Camisa II Brasil Azul',
+      preco: 259.99,
       imageURL: 'images/camisa2selecaoAzul.png',
       estado: 'esgotado'
     }
