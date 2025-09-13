@@ -21,7 +21,7 @@ export class ProdutoService {
       },
       {
         id: 2,
-        nome: 'Produto 2',
+        nome: 'Camisa Goleiro',
         descricao: 'Camisa de Goleiro 2024',
         preco: 299.99,
         imageURL: 'images/brasil2024gk.png',
@@ -43,5 +43,4 @@ export class ProdutoService {
       return of(this.listaMock).pipe(delay(1000));
     }
 
-    
 }
