@@ -24,5 +24,5 @@ export class App {
   receberSobre( texto : string){
     this.sobre = texto;
   }
-
+  
 }
