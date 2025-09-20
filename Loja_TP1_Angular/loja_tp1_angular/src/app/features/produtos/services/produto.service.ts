@@ -40,7 +40,7 @@ export class ProdutoService {
 
     listar():Observable<Produto[]>{
       this.logger.info('[ProdutoService] - Listando Produtos');
-      return of(this.listaMock).pipe(delay(1000));
+      return of(this.listaMock)//.pipe(delay(1000));
     }
 
 }
