@@ -11,7 +11,9 @@
         </button>
     </header>
     
-
+    @if(loading()){
+        <p>Carregando Produtos</p> <!--CircularProgressIndicator-->
+    }
     @if(prodExibidos().length == 0){
         <p class="vazio">Nenhum produto encontrado para o filtro atual</p>
     }
