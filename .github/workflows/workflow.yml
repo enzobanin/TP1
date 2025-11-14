@@ -16,7 +16,7 @@ jobs: # é o passo a passo que será realizado
           node-version: 22.x #estamos especificando a versao que queremos do node 
       - name: run install, build 
         run: | 
-          cd Loja_TP1_Angular
+          cd Loja_TP1_Angular/loja_tp1_angular
           npm install 
           npm run build 
 
@@ -27,4 +27,4 @@ jobs: # é o passo a passo que será realizado
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }} 
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
         env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }} 
