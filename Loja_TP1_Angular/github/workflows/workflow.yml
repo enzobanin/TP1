@@ -1,0 +1,29 @@
+name: Continuous Integration
+
+on: [pull_request, push]
+# colocamos no on, o evento que irá disparar o workflow ("triggar")
+jobs: 
+# é o passo a passo que será realizado
+  continuous-integration: #nome do job
+    runs-on: ubuntu-latest  #precisamos especificar o sistema operacional que a máquina virutal terá 
+
+    steps: #passo a ser seguido dentro da jobs
+      - uses: actions/checkout@v3   #serve para clonar o repositorio(git clone) para a maquina virtual
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v2  #baixar o node na maquina para usarmos os comandos npm
+        with: 
+          node-version: 22.x #estamos especificando a versao que queremos do node
+
+      - name: run install, build 
+        run: |
+          npm install
+          npm run build
+
+      - name: Deploy para Vercel
+        uses: amondnet/vercel-action@v20 #baixa o vercel na mv
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} #autentica usando o token
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }} #verifica o id do projeto 
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }} #verifica o id da organização
+    
