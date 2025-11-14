@@ -5,7 +5,10 @@ on: [pull_request, push] # colocamos no on, o evento que irá disparar o workflo
 jobs: # é o passo a passo que será realizado 
 
   continuous-integration: #nome do job 
-    runs-on: ubuntu-latest #precisamos especificar o sistema operacional que a máquina virutal terá 
+    runs-on: ubuntu-latest #precisamos especificar o sistema operacional que a máquina virutal terá
+    defaults:
+      run:
+        working-directory: ./Loja_TP1_angular/loja_tp1_angular 
     
     steps: #passo a ser seguido dentro da jobs 
       - uses: actions/checkout@v3 #serve para clonar o repositorio(git clone) para a maquina virtual 
