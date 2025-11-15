@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class ProdutoService {
   logger = inject(LoggerService);
   http = inject(HttpClient);
+  apiUrl = 'https://fakestoreapi.com/products';
 
   // private readonly listaMock: Produto[] = [
   //     {
@@ -43,7 +44,7 @@ export class ProdutoService {
     listar():Observable<Produto[]>{
       this.logger.info('[ProdutoService] - Listando Produtos');
       //  return of(this.listaMock);//.pipe(delay(1000));
-      return this.http.get<any[]>('https://fakestoreapi.com/products').pipe(
+      return this.http.get<any[]>(this.apiUrl).pipe(
         map(lista => lista.map(json => ProdutoMaper.fromJson(json))),
         catchError(err => of([]))
       );
@@ -52,6 +53,17 @@ export class ProdutoService {
     getById(id:number):Observable<Produto|undefined>{
       // return of(this.listaMock.find(p => p.id == id));//.pipe(delay(500)) para simular o atraso 
       return of(); //exercicio
+    }
+
+    criar(produto: Produto): Observable<any>{
+      let body = {
+        title: produto.nome,
+        price: produto.preco,
+        description: produto.descricao,
+        image: produto.imageURL,
+        category: produto.categoria
+      }
+      return this.http.post(this.apiUrl, body);
     }
 
     

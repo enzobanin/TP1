@@ -40,5 +40,9 @@ export class ListaProdutos {
     this.router.navigate(['/produtos',id]);
   }
 
+  onCreateProduct(rota:String){
+    this.router.navigate([rota]);
+  }
+
 }
 
